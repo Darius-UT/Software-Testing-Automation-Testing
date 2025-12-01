@@ -1,0 +1,7 @@
+TestCaseID,Quantity,ExpectedType,ExpectedMessage,ExpectedQty
+TC-009-001,5,Success,Success: You have modified your shopping cart!,5
+TC-009-002,1,Success,Success: You have modified your shopping cart!,1
+TC-009-003,2,Success,Success: You have modified your shopping cart!,2
+TC-009-004,609,Success,Success: You have modified your shopping cart!,609
+TC-009-005,610,Success,Success: You have modified your shopping cart!,610
+TC-009-007,611,Error,Products marked with *** are not available,611

@@ -1,0 +1,63 @@
+# --- Python General ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# --- Virtual Environment ---
+# Các thư mục môi trường ảo phổ biến
+venv/
+env/
+ENV/
+.env
+
+# --- VS Code ---
+# Bỏ qua setting cá nhân, nhưng giữ lại setting chung nếu cần
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# --- Testing Artifacts ---
+# Bỏ qua báo cáo HTML nếu sinh ra (chỉ cần chạy lại là có)
+Reports/
+*.log
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# --- Project Specifics ---
+# File rác do extension Code Runner tạo ra (như trong ảnh của bạn)
+tempCodeRunnerFile.py
+
+# Driver: Không nên commit lên vì mỗi máy dùng Chrome version khác nhau
+# Mỗi thành viên tự tải và bỏ vào folder Drivers của máy mình
+Drivers/
+
+# Dữ liệu tạm thời hoặc file kết quả xuất ra (nếu có)
+*.tmp

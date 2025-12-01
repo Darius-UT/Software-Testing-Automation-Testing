@@ -1,0 +1,1 @@
+# Chưa có viết gì á, AI chưa kịp Gen
