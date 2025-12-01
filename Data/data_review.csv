@@ -1,0 +1,10 @@
+Case_ID,Target_URL,Locator_Tab,Locator_Name,Locator_Review,Locator_Rating_Base,Locator_Btn,Val_Name,Val_Review,Val_Rating,Expected_Result
+
+TC-006-001,https://ecommerce-playground.lambdatest.io/index.php?route=product/product&product_id=41,link_text=Reviews,id=input-name,id=input-review,css=input[name='rating'],id=button-review,Hàng Nhựt Long,Sản phẩm này rất tuyệt vời dùng rất thích...,5,Thank you for your review. It has been submitted to the webmaster for approval.
+
+TC-006-002,https://ecommerce-playground.lambdatest.io/index.php?route=product/product&product_id=41,link_text=Reviews,id=input-name,id=input-review,css=input[name='rating'],id=button-review,Hàng Nhựt Long,Ngan qua,5,Review Text must be between 25 and 1000 characters
+
+TC-006-009,https://ecommerce-playground.lambdatest.io/index.php?route=product/product&product_id=41,link_text=Reviews,id=input-name,id=input-review,css=input[name='rating'],id=button-review,Ty,Sản phẩm này rất tuyệt vời dùng rất thích...,5,Name must be between 3 and 25 characters
+
+TC-006-015,https://ecommerce-playground.lambdatest.io/index.php?route=product/product&product_id=41,link_text=Reviews,id=input-name,id=input-review,css=input[name='rating'],id=button-review,Hàng Nhựt Long,Sản phẩm này rất tuyệt vời dùng rất thích...,,Warning: Please select a review rating
+
