@@ -2,6 +2,7 @@
 import unittest
 import csv
 import time
+import os
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
@@ -48,7 +49,11 @@ class TestFilter(unittest.TestCase):
         driver = self.driver
         print("\n--- FILTER AUTOMATION TEST ---")
 
-        with open('data_filter.csv', 'r', encoding='utf-8') as file:
+        # Get the path to the data file relative to this script
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        data_file = os.path.join(script_dir, '..', 'Data', 'data_filter.csv')
+
+        with open(data_file, 'r', encoding='utf-8') as file:
             for row in csv.DictReader(file):
                 print(f"Running {row['Case_ID']}...", end=" ")
                 
