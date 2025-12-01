@@ -1,14 +1,7 @@
-Case_ID,Target_URL,Locator_Search,Locator_PriceMin,Locator_PriceMax,Locator_FilterBtn,Data_Search,Data_PriceMin,Data_PriceMax,Data_Category,Expected_Result
-
-TC-005-001,https://ecommerce-playground.lambdatest.io/index.php?route=product/category&path=24,name=mz_fq,name=mz_fp[min],name=mz_fp[max],id=button-filter,,1000,1000,,602
-
-TC-005-002,https://ecommerce-playground.lambdatest.io/index.php?route=product/category&path=24,name=mz_fq,name=mz_fp[min],name=mz_fp[max],id=button-filter,,97,97,,There are no products to list in this category.
-
-TC-005-003,https://ecommerce-playground.lambdatest.io/index.php?route=product/category&path=24,name=mz_fq,name=mz_fp[min],name=mz_fp[max],id=button-filter,,98,98,,98
-
-TC-005-008,https://ecommerce-playground.lambdatest.io/index.php?route=product/category&path=24,name=mz_fq,name=mz_fp[min],name=mz_fp[max],id=button-filter,iMac,,,,iMac
-
-TC-005-009,https://ecommerce-playground.lambdatest.io/index.php?route=product/category&path=24,name=mz_fq,name=mz_fp[min],name=mz_fp[max],id=button-filter,asdfghjkl,,,,There are no products to list in this category.
-
-TC-005-012,https://ecommerce-playground.lambdatest.io/index.php?route=product/category&path=24,name=mz_fq,name=mz_fp[min],name=mz_fp[max],id=button-filter,iMac,100,500,Phones & PDAs,iMac
-
+Case_ID,Target_URL,Locator_Search,Locator_PriceMin,Locator_PriceMax,Data_Search,Data_PriceMin,Data_PriceMax,Data_Category,Expected_Result
+TC-005-001,https://ecommerce-playground.lambdatest.io/index.php?route=product/category&path=24,name=mz_fq,name=mz_fp[min],name=mz_fp[max],,602,602,,602
+TC-005-002,https://ecommerce-playground.lambdatest.io/index.php?route=product/category&path=24,name=mz_fq,name=mz_fp[min],name=mz_fp[max],,97,97,,There are no products to list in this category.
+TC-005-003,https://ecommerce-playground.lambdatest.io/index.php?route=product/category&path=24,name=mz_fq,name=mz_fp[min],name=mz_fp[max],,98,98,,98
+TC-005-008,https://ecommerce-playground.lambdatest.io/index.php?route=product/category&path=24,name=mz_fq,name=mz_fp[min],name=mz_fp[max],iMac,,,,iMac
+TC-005-009,https://ecommerce-playground.lambdatest.io/index.php?route=product/category&path=24,name=mz_fq,name=mz_fp[min],name=mz_fp[max],asdfghjkl,,,,There are no products to list in this category.
+TC-005-012,https://ecommerce-playground.lambdatest.io/index.php?route=product/category&path=24,name=mz_fq,name=mz_fp[min],name=mz_fp[max],iMac,100,500,Phones & PDAs,iMac
