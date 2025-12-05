@@ -1,0 +1,10 @@
+TestCaseID,WebsiteUrl,ProductName,DataOriginalTitle,InputQuantity,ExpectedQuantity,ExpectedMessage,Description
+TC-009-001,https://ecommerce-playground.lambdatest.io/index.php?route=checkout/cart,Palm Treo Pro,Update,5,5,Success: You have modified your shopping cart!,Nominal Value
+TC-009-002,https://ecommerce-playground.lambdatest.io/index.php?route=checkout/cart,Palm Treo Pro,Update,1,1,Success: You have modified your shopping cart!,Min Value
+TC-009-003,https://ecommerce-playground.lambdatest.io/index.php?route=checkout/cart,Palm Treo Pro,Update,2,2,Success: You have modified your shopping cart!,Min Plus Value
+TC-009-004,https://ecommerce-playground.lambdatest.io/index.php?route=checkout/cart,Palm Treo Pro,Update,553,553,Success: You have modified your shopping cart!,Max Minus Value (Sat ton kho)
+TC-009-005,https://ecommerce-playground.lambdatest.io/index.php?route=checkout/cart,Palm Treo Pro,Update,554,554,Success: You have modified your shopping cart!,Max Value (Bang ton kho)
+TC-009-008,https://ecommerce-playground.lambdatest.io/index.php?route=checkout/cart,Palm Treo Pro,Update,5,5,Success: You have modified your shopping cart!,Valid Integer (Lop V1)
+TC-009-009,https://ecommerce-playground.lambdatest.io/index.php?route=checkout/cart,Palm Treo Pro,Update,10.9,10,Success: You have modified your shopping cart!,Valid Parsable (Input 10.9 -> Hien thi 10)
+TC-009-018,https://ecommerce-playground.lambdatest.io/index.php?route=checkout/cart,Palm Treo Pro,Update,10,10,Success: You have modified your shopping cart!,Valid Update Action
+TC-009-020,https://ecommerce-playground.lambdatest.io/index.php?route=checkout/cart,Palm Treo Pro,Update,10,10,Success: You have modified your shopping cart!,UCT Basic Flow
