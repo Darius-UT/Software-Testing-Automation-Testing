@@ -1,0 +1,5 @@
+TestCaseID,WebsiteUrl,ProductName,InputQuantity,DataOriginalTitle,ExpectedMessage,NotExpectedMessage,Description
+TC-009-007,https://ecommerce-playground.lambdatest.io/index.php?route=checkout/cart,Palm Treo Pro,555,Update,Products marked with *** are not available in the desired quantity or not in stock!,Success: You have modified your shopping cart!,Max Plus (Error)
+TC-009-010,https://ecommerce-playground.lambdatest.io/index.php?route=checkout/cart,Palm Treo Pro,555,Update,Products marked with *** are not available in the desired quantity or not in stock!,Success: You have modified your shopping cart!,Invalid Over Stock (Lop NV1)
+TC-009-019,https://ecommerce-playground.lambdatest.io/index.php?route=checkout/cart,Palm Treo Pro,555,Update,Products marked with *** are not available in the desired quantity or not in stock!,Success: You have modified your shopping cart!,Over Stock Exception (DTBT)
+TC-009-021,https://ecommerce-playground.lambdatest.io/index.php?route=checkout/cart,Palm Treo Pro,555,Update,Products marked with *** are not available in the desired quantity or not in stock!,Success: You have modified your shopping cart!,UCT Exception Flow
