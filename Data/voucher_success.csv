@@ -1,0 +1,15 @@
+TestCaseID,RecipientName,RecipientEmail,YourName,YourEmail,Theme,Message,Amount,Agree,ExpectedLocationUrl,ExpectedText
+TC-010-001,John Smith,john@test.com,My Name,me@test.com,Birthday,Happy Birthday,50.00,Yes,https://ecommerce-playground.lambdatest.io/index.php?route=account/voucher/success,Thank you for purchasing a gift certificate!
+TC-010-002,John Smith,john@test.com,My Name,me@test.com,Birthday,,1.00,Yes,https://ecommerce-playground.lambdatest.io/index.php?route=account/voucher/success,Thank you for purchasing a gift certificate!
+TC-010-003,John Smith,john@test.com,My Name,me@test.com,Birthday,,1.01,Yes,https://ecommerce-playground.lambdatest.io/index.php?route=account/voucher/success,Thank you for purchasing a gift certificate!
+TC-010-004,John Smith,john@test.com,My Name,me@test.com,Birthday,,999.99,Yes,https://ecommerce-playground.lambdatest.io/index.php?route=account/voucher/success,Thank you for purchasing a gift certificate!
+TC-010-005,John Smith,john@test.com,My Name,me@test.com,Birthday,,1000.00,Yes,https://ecommerce-playground.lambdatest.io/index.php?route=account/voucher/success,Thank you for purchasing a gift certificate!
+TC-010-008,A,john@test.com,My Name,me@test.com,Birthday,,50.00,Yes,https://ecommerce-playground.lambdatest.io/index.php?route=account/voucher/success,Thank you for purchasing a gift certificate!
+TC-010-009,An,john@test.com,My Name,me@test.com,Birthday,,50.00,Yes,https://ecommerce-playground.lambdatest.io/index.php?route=account/voucher/success,Thank you for purchasing a gift certificate!
+TC-010-010,Hubert Blaine Wolfeschlegelsteinhausenbergerdorff Sr Senior I,john@test.com,My Name,me@test.com,Birthday,,50.00,Yes,https://ecommerce-playground.lambdatest.io/index.php?route=account/voucher/success,Thank you for purchasing a gift certificate!
+TC-010-011,Hubert Blaine Wolfeschlegelsteinhausenbergerdorff Sr Senior II,john@test.com,My Name,me@test.com,Birthday,,50.00,Yes,https://ecommerce-playground.lambdatest.io/index.php?route=account/voucher/success,Thank you for purchasing a gift certificate!
+TC-010-014,John Smith,john@test.com,My Name,me@test.com,Birthday,,50.00,Yes,https://ecommerce-playground.lambdatest.io/index.php?route=account/voucher/success,Thank you for purchasing a gift certificate!
+TC-010-015,Bob,~user@test.net,My Name,me@test.com,Christmas,Merry Xmas,100.00,Yes,https://ecommerce-playground.lambdatest.io/index.php?route=account/voucher/success,Thank you for purchasing a gift certificate!
+TC-010-037,John Smith,john@test.com,My Name,me@test.com,General,,50.00,Yes,https://ecommerce-playground.lambdatest.io/index.php?route=account/voucher/success,Thank you for purchasing a gift certificate!
+TC-010-038,John Smith,john@test.com,My Name,me@test.com,Birthday,,50.00,Yes,https://ecommerce-playground.lambdatest.io/index.php?route=account/voucher/success,Thank you for purchasing a gift certificate!
+TC-010-042,No Message User,user@test.com,My Name,me@test.com,General,,10.00,Yes,https://ecommerce-playground.lambdatest.io/index.php?route=account/voucher/success,Thank you for purchasing a gift certificate!
