@@ -1,0 +1,13 @@
+TestCaseID,firstname,lastname,email,telephone,password,confirmPassword,PrivacyCheck,ExpectedMessage,ExpectedType
+TC-001-001,Minh ,Quang,feature001_test_DDT_001@gmail.com,0901234567,1234567890,1234567890,TRUE,Your Account Has Been Created!,success
+TC-001-002,Minh ,Quang,feature001_test_DDT_002@gmail.com,0901234568,123,123,TRUE,Password must be between 4 and 20 characters!,fail
+TC-001-003,Minh ,Quang,feature001_test_DDT_003@gmail.com,0901234569,1234,1234,TRUE,Your Account Has Been Created!,success
+TC-001-004,Minh ,Quang,feature001_test_DDT_004@gmail.com,0901234570,12345,12345,TRUE,Your Account Has Been Created!,success
+TC-001-005,Minh ,Quang,feature001_test_DDT_005@gmail.com,0901234571,1234567890123456789,1234567890123456789,TRUE,Your Account Has Been Created!,success
+TC-001-006,Minh ,Quang,feature001_test_DDT_006@gmail.com,0901234572,12345678901234567890,12345678901234567890,TRUE,Your Account Has Been Created!,success
+TC-001-007,Minh ,Quang,feature001_test_DDT_007@gmail.com,0901234573,asdfghjklqwertyuiop12,asdfghjklqwertyuiop12,TRUE,Your Account Has Been Created!,success
+TC-001-009,,Quang,feature001_test_DDT_009@gmail.com,0901234575,Abcd1235,Abcd1235,TRUE,First Name must be between 1 and 32 characters!,fail
+TC-001-010,Minh ,Quang,feature_001_DDT.gmail.com,0901234576,1234,1234,TRUE,,fail
+TC-001-011,Minh ,Quang,feature001_test_DDT_011@gmail.com,0901234577,123,123,TRUE,Password must be between 4 and 20 characters!,fail
+TC-001-012,Minh ,Quang,feature001_test_DDT_012@gmail.com,0901234578,12345,45678,TRUE,Password confirmation does not match password!,fail
+TC-001-013,Minh ,Quang,feature001_test_DDT_013@gmail.com,0901234579,12345,12345,FALSE,Warning: You must agree to the Privacy Policy!,fail

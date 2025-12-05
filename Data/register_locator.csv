@@ -1,0 +1,18 @@
+Name,Type,Value
+base_url,url,https://ecommerce-playground.lambdatest.io/
+register_url,url,https://ecommerce-playground.lambdatest.io/index.php?route=account/register
+logout_url,url,https://ecommerce-playground.lambdatest.io/index.php?route=account/logout
+firstname_input,id,input-firstname
+lastname_input,id,input-lastname
+email_input,id,input-email
+telephone_input,id,input-telephone
+password_input,id,input-password
+confirm_password_input,id,input-confirm
+privacy_label,xpath,//label[@for='input-agree']
+privacy_checkbox,id,input-agree
+continue_button,xpath,//input[@value='Continue']
+success_title,css,#content h1
+alert_danger,css,.alert-danger
+danger_text,css,.text-danger
+
+

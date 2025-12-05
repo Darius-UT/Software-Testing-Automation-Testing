@@ -1,0 +1,12 @@
+TestCaseID,Description,FirstName,LastName,Email,Telephone,OrderID,DateOrdered,ProductName,ProductCode,Quantity,Reason,Opened,ExpectedMessage
+TC-012-006,Empty First Name,,Doe,alice@example.com,0123456789,21452,2025-11-20,Palm Treo Pro,Product 2,1,Dead On Arrival,Yes,First Name must be between 1 and 32 characters!
+TC-012-007,Long First Name,Maximilian Theodore Washington II,Doe,alice@example.com,0123456789,21452,2025-11-20,Palm Treo Pro,Product 2,1,Dead On Arrival,Yes,First Name must be between 1 and 32 characters!
+TC-012-012,Quantity Zero,Alice,Doe,alice@example.com,0123456789,21452,2025-11-20,Palm Treo Pro,Product 2,0,Dead On Arrival,Yes,Quantity must be greater than 0
+TC-012-018,Empty Email,Alice,Doe,,0123456789,21452,2025-11-20,Palm Treo Pro,Product 2,1,Dead On Arrival,Yes,E-Mail Address does not appear to be valid!
+TC-012-019,Invalid Email No @,Alice,Doe,userexample.com,0123456789,21452,2025-11-20,Palm Treo Pro,Product 2,1,Dead On Arrival,Yes,E-Mail Address does not appear to be valid!
+TC-012-020,Invalid Email Forbidden Char,Alice,Doe,[user]@test.com,0123456789,21452,2025-11-20,Palm Treo Pro,Product 2,1,Dead On Arrival,Yes,E-Mail Address does not appear to be valid!
+TC-012-026,String Quantity,Alice,Doe,alice@example.com,0123456789,21452,2025-11-20,Palm Treo Pro,Product 2,abc,Dead On Arrival,Yes,Quantity must be greater than 0
+TC-012-028,No Reason Selected,Alice,Doe,alice@example.com,0123456789,21452,2025-11-20,Palm Treo Pro,Product 2,1,,Yes,You must select a return product reason!
+TC-012-030,Missing Order ID,Alice,Doe,alice@example.com,0123456789,,2025-11-20,Palm Treo Pro,Product 2,1,Dead On Arrival,Yes,Order ID required!
+TC-012-032,Order Not Found,Alice,Doe,alice@example.com,0123456789,99999,2025-11-20,Palm Treo Pro,Product 2,1,Dead On Arrival,Yes,No order found!
+TC-012-033,Email Mismatch,Alice,Doe,other@example.com,0123456789,29388,2025-11-20,Palm Treo Pro,Product 2,1,Dead On Arrival,Yes,E-Mail Address does not appear to be valid!

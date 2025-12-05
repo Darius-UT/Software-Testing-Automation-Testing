@@ -1,0 +1,14 @@
+TestCaseID,FirstName,LastName,Email,Telephone,OrderID,DateOrdered,ProductName,ProductCode,Quantity,Reason,Opened,ExpectedMessage,Description
+TC-012-001,Alice,Nguyen,user@test.com,0901234567,29388,2025-11-20,Palm Treo Pro,Product 2,5,Dead On Arrival,Yes,Thank you for submitting your return request.,Base Case - Nominal
+TC-012-002,A,Nguyen,user@test.com,0901234567,29388,2025-11-20,Palm Treo Pro,Product 2,5,Dead On Arrival,Yes,Thank you for submitting your return request.,First Name Min
+TC-012-003,An,Nguyen,user@test.com,0901234567,29388,2025-11-20,Palm Treo Pro,Product 2,5,Dead On Arrival,Yes,Thank you for submitting your return request.,First Name Min+
+TC-012-004,Alexander Montgomery Williamson,Nguyen,user@test.com,0901234567,29388,2025-11-20,Palm Treo Pro,Product 2,5,Dead On Arrival,Yes,Thank you for submitting your return request.,First Name Max-
+TC-012-005,Maximilian Theodore Washington I,Nguyen,user@test.com,0901234567,29388,2025-11-20,Palm Treo Pro,Product 2,5,Dead On Arrival,Yes,Thank you for submitting your return request.,First Name Max
+TC-012-008,Alice,Nguyen,user@test.com,0901234567,29388,2025-11-20,Palm Treo Pro,Product 2,1,Dead On Arrival,Yes,Thank you for submitting your return request.,Quantity Min
+TC-012-009,Alice,Nguyen,user@test.com,0901234567,29388,2025-11-20,Palm Treo Pro,Product 2,2,Dead On Arrival,Yes,Thank you for submitting your return request.,Quantity Min+
+TC-012-010,Alice,Nguyen,user@test.com,0901234567,29388,2025-11-20,Palm Treo Pro,Product 2,9,Dead On Arrival,Yes,Thank you for submitting your return request.,Quantity Max-
+TC-012-011,Alice,Nguyen,user@test.com,0901234567,29388,2025-11-20,Palm Treo Pro,Product 2,10,Dead On Arrival,Yes,Thank you for submitting your return request.,Quantity Max
+TC-012-014,Alice,Nguyen,user@example.com,0901234567,29388,2025-11-20,Palm Treo Pro,Product 2,1,Dead On Arrival,No,Thank you for submitting your return request.,ECT Valid Standard
+TC-012-015,Bob,Nguyen,~user@test.net,0901234567,29388,2025-11-20,Palm Treo Pro,Product 2,5,"Faulty, please supply details",Yes,Thank you for submitting your return request.,ECT Valid Special Email
+TC-012-034,Alice,Nguyen,user@test.com,0901234567,29388,2025-11-20,Palm Treo Pro,Product 2,1,Dead On Arrival,Yes,Thank you for submitting your return request.,DTBT Success Logic
+TC-011-035,Alice,Nguyen,user@test.com,0901234567,29388,2025-11-20,Palm Treo Pro,Product 2,1,Dead On Arrival,Yes,Thank you for submitting your return request.,UCT Basic Flow
