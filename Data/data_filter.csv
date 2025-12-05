@@ -1,0 +1,22 @@
+Case_ID,Target_URL,Locator_Search,Locator_PriceMin,Locator_PriceMax,Data_Search,Data_PriceMin,Data_PriceMax,Data_Category,Expected_Result
+TC-005-001,https://ecommerce-playground.lambdatest.io/index.php?route=product/category&path=24,name=mz_fq,name=mz_fp[min],name=mz_fp[max],,1000,1000,,1000
+TC-005-002,https://ecommerce-playground.lambdatest.io/index.php?route=product/category&path=24,name=mz_fq,name=mz_fp[min],name=mz_fp[max],,97,97,,There are no products to list in this category
+TC-005-003,https://ecommerce-playground.lambdatest.io/index.php?route=product/category&path=24,name=mz_fq,name=mz_fp[min],name=mz_fp[max],,98,98,,98
+TC-005-004,https://ecommerce-playground.lambdatest.io/index.php?route=product/category&path=24,name=mz_fq,name=mz_fp[min],name=mz_fp[max],,99,99,,99
+TC-005-005,https://ecommerce-playground.lambdatest.io/index.php?route=product/category&path=24,name=mz_fq,name=mz_fp[min],name=mz_fp[max],,1999,1999,,1999
+TC-005-006,https://ecommerce-playground.lambdatest.io/index.php?route=product/category&path=24,name=mz_fq,name=mz_fp[min],name=mz_fp[max],,2000,2000,,2000
+TC-005-007,https://ecommerce-playground.lambdatest.io/index.php?route=product/category&path=24,name=mz_fq,name=mz_fp[min],name=mz_fp[max],,2001,2001,,There are no products to list in this category
+TC-005-008,https://ecommerce-playground.lambdatest.io/index.php?route=product/category&path=24,name=mz_fq,name=mz_fp[min],name=mz_fp[max],iMac,,,,iMac
+TC-005-009,https://ecommerce-playground.lambdatest.io/index.php?route=product/category&path=24,name=mz_fq,name=mz_fp[min],name=mz_fp[max],asdfghjkl,,,,There are no products to list in this category
+TC-005-010,https://ecommerce-playground.lambdatest.io/index.php?route=product/category&path=24,name=mz_fq,name=mz_fp[min],name=mz_fp[max],,,,,HTC
+TC-005-011,https://ecommerce-playground.lambdatest.io/index.php?route=product/category&path=24,name=mz_fq,name=mz_fp[min],name=mz_fp[max],!@#$%,,,,There are no products to list in this category
+TC-005-012,https://ecommerce-playground.lambdatest.io/index.php?route=product/category&path=24,name=mz_fq,name=mz_fp[min],name=mz_fp[max],iMac,100,500,Phones & PDAs,iMac
+TC-005-013,https://ecommerce-playground.lambdatest.io/index.php?route=product/category&path=24,name=mz_fq,name=mz_fp[min],name=mz_fp[max],iMac,100,500,,iMac
+TC-005-014,https://ecommerce-playground.lambdatest.io/index.php?route=product/category&path=24,name=mz_fq,name=mz_fp[min],name=mz_fp[max],iMac,,,Phones & PDAs,iMac
+TC-005-015,https://ecommerce-playground.lambdatest.io/index.php?route=product/category&path=24,name=mz_fq,name=mz_fp[min],name=mz_fp[max],iMac,,,,iMac
+TC-005-016,https://ecommerce-playground.lambdatest.io/index.php?route=product/category&path=24,name=mz_fq,name=mz_fp[min],name=mz_fp[max],,100,500,Phones & PDAs,HTC
+TC-005-017,https://ecommerce-playground.lambdatest.io/index.php?route=product/category&path=24,name=mz_fq,name=mz_fp[min],name=mz_fp[max],,100,500,,HTC
+TC-005-018,https://ecommerce-playground.lambdatest.io/index.php?route=product/category&path=24,name=mz_fq,name=mz_fp[min],name=mz_fp[max],,,,Phones & PDAs,HTC
+TC-005-019,https://ecommerce-playground.lambdatest.io/index.php?route=product/category&path=24,name=mz_fq,name=mz_fp[min],name=mz_fp[max],,,,,HTC
+TC-005-020,https://ecommerce-playground.lambdatest.io/index.php?route=product/category&path=24,name=mz_fq,name=mz_fp[min],name=mz_fp[max],iMac,100,200,,iMac
+TC-005-021,https://ecommerce-playground.lambdatest.io/index.php?route=product/category&path=24,name=mz_fq,name=mz_fp[min],name=mz_fp[max],asdfghjkl,,,,There are no products to list in this category
