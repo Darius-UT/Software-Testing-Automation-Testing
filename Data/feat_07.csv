@@ -1,0 +1,21 @@
+tc_id,description,product_id,size_option,qty_input,expected_type,expected_message
+TC-007-001,Add Nominal Value (5),68,Medium,5,success,Success: You have added Apple Cinema 30
+TC-007-002,Add Min Value (2),68,Medium,2,success,Success: You have added Apple Cinema 30
+TC-007-003,Add Min Plus Value (3),68,Medium,3,success,Success: You have added Apple Cinema 30
+TC-007-004,Add Max Minus Value (104),68,Medium,104,success,Success: You have added Apple Cinema 30
+TC-007-005,Add Max Value (105),68,Medium,105,success,Success: You have added Apple Cinema 30
+TC-007-006,Add Min Minus (Invalid 1),68,Medium,1,error_warning,This product has a minimum quantity of 2
+TC-007-007,Add Max Plus (Invalid 106),68,Medium,106,error_warning,Products marked with *** are not available in the desired quantity
+TC-007-008,BVT Valid Options,68,Medium,5,success,Success: You have added Apple Cinema 30
+TC-007-009,Missing Option (Size),68,,5,error_text_danger,Size required!
+TC-007-010,Invalid Min Qty (1),68,Medium,1,error_warning,This product has a minimum quantity of 2
+TC-007-011,Invalid Zero,68,Medium,0,error_warning,This product has a minimum quantity of 2
+TC-007-012,Invalid Negative,68,Medium,-5,error_warning,This product has a minimum quantity of 2
+TC-007-013,Invalid String,68,Medium,abc,error_validation,NaN
+TC-007-014,Invalid Over Stock (106),68,Medium,106,error_warning,Products marked with *** are not available in the desired quantity
+TC-007-016,DTBT Rule R2 (Missing Option),68,,5,error_text_danger,Size required!
+TC-007-017,DTBT Rule R3 (Min Qty),68,Medium,1,error_warning,This product has a minimum quantity of 2
+TC-007-018,DTBT Rule R4 (Success),68,Medium,5,success,Success: You have added Apple Cinema 30
+TC-007-019,UCT Basic Flow,68,Medium,2,success,Success: You have added Apple Cinema 30
+TC-007-021,UCT Exception (Min Qty),68,Medium,1,error_warning,This product has a minimum quantity of 2
+TC-007-022,UCT Exception (Missing Option),68,,5,error_text_danger,Size required!
