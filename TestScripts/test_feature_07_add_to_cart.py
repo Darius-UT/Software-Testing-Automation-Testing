@@ -79,7 +79,7 @@ class TestFeature07AddToCart(unittest.TestCase):
         driver = self.driver
         print_header("TEST SUITE: ADD TO CART DATA DRIVEN")
 
-        csv_path = os.path.join('Data', 'feat_07.csv')
+        csv_path = os.path.join('Data', 'add_to_cart.csv')
         if not os.path.exists(csv_path):
             self.fail(f"Không tìm thấy file dữ liệu tại: {csv_path}")
 
