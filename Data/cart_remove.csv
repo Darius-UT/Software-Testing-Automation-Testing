@@ -1,0 +1,4 @@
+TestCaseID,WebsiteUrl,ProductName,ActionType,InputQuantity,ExpectedMessage,Description
+TC-009-006,https://ecommerce-playground.lambdatest.io/index.php?route=checkout/cart,Palm Treo Pro,Update,0,Success: You have modified your shopping cart!,Min Minus (Input 0 -> Remove)
+TC-009-017,https://ecommerce-playground.lambdatest.io/index.php?route=checkout/cart,Palm Treo Pro,Update,a,Success: You have modified your shopping cart!,Indirect Remove (Input Char -> Remove)
+TC-009-016,https://ecommerce-playground.lambdatest.io/index.php?route=checkout/cart,Palm Treo Pro,RemoveBtn,,Success: You have modified your shopping cart!,Direct Remove (Click Button Remove)
