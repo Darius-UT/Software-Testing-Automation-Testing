@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import csv
 import os
+import sys
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -25,6 +26,9 @@ fields_dropdown = {
     "Locator_Region": "Region"
 }
 
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from Utilities.console_utils import print_header, print_info, print_pass, print_fail
+
 class TestFeature04AddNewAddress(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome()
@@ -34,13 +38,23 @@ class TestFeature04AddNewAddress(unittest.TestCase):
         self.accept_next_alert = True
     
     def test_feature03_edit_account(self):
+        print_header("TEST SUITE: ADD NEW ADDRESS")
         driver = self.driver
         script_dir = os.path.dirname(os.path.abspath(__file__))
         data_file = os.path.join(script_dir, '..', 'Data', 'add_new_address.csv')
         with open(data_file, mode='r', encoding='utf-8-sig') as csvfile:
             reader = csv.DictReader(csvfile)
             for row in reader:
-                print(f"Running {row['Testcase ID']}...", end=" ")
+                test_case_id = row['Testcase ID']
+                print(f"\n--------------------------------------------------")
+                print_info("Running", test_case_id)
+                print_info("Input First Name", row['First Name'])
+                print_info("Input Last Name", row['Last Name'])
+                print_info("Input Address 1", row['Address1'])
+                print_info("Input City", row['City'])
+                print_info("Input Postcode", row['Postcode'])
+                print_info("Select Country", row['Country'])
+                print_info("Select Region/State", row['Region'])
                 driver.get(row['Target_URL'])
                 time.sleep(3)
                 driver.find_element(By.XPATH, row['Locator_Username']).clear()
@@ -66,43 +80,46 @@ class TestFeature04AddNewAddress(unittest.TestCase):
                 form.submit()
 
                 time.sleep(3)
+
+                expected_msg = row['Expected Message']
+                
                 if row['Type'] == "Text":
-                    element = driver.find_element(By.XPATH, row['Locator_Message'])
-                    actual_text = element.text
-                    assert actual_text == row['Expected Message'], f"Lỗi: Mong đợi {row['Expected Message']} nhưng nhận được '{actual_text}'"
+                    try:
+                        element = driver.find_element(By.XPATH, row['Locator_Message'])
+                        actual_text = element.text
+                        self.assertEqual(actual_text, expected_msg)
+                        print_pass(f"Hiển thị đúng thông báo: '{actual_text}'")
+                    except AssertionError:
+                        msg = f"Sai nội dung thông báo! Mong đợi: '{expected_msg}', Thực tế: '{actual_text}'"
+                        print_fail(msg)
+                        self.verificationErrors.append(f"[{test_case_id}] {msg}")
                 elif row['Type'] == "Validation":
-                    js_script = f'return document.getElementById("{row['Locator_Message']}").validationMessage.includes("{row['Expected Message']}");'
-                    is_valid = driver.execute_script(js_script)
-    
-                    assert is_valid is True, f"Lỗi: Validation message không chứa '{row['Expected Message']}'"
+                    locator_id = row['Locator_Message']
+                    js_script = f'return document.getElementById("{locator_id}").validationMessage;'
+                    actual_validation = driver.execute_script(js_script)
+                    
+                    if expected_msg in actual_validation:
+                            print_pass(f"Validation message chuẩn: '{actual_validation}'")
+                    else:
+                            msg = f"Validation sai! Mong đợi chứa '{expected_msg}', Thực tế: '{actual_validation}'"
+                            print_fail(msg)
+                            self.verificationErrors.append(f"[{test_case_id}] {msg}")
                 driver.find_element(By.XPATH, row['Locator_LogoutBTN']).click()
                 time.sleep(5)
                 print("Pass")            
     
-    def is_element_present(self, how, what):
-        try: self.driver.find_element(by=how, value=what)
-        except NoSuchElementException as e: return False
-        return True
-    
-    def is_alert_present(self):
-        try: self.driver.switch_to_alert()
-        except NoAlertPresentException as e: return False
-        return True
-    
-    def close_alert_and_get_its_text(self):
-        try:
-            alert = self.driver.switch_to_alert()
-            alert_text = alert.text
-            if self.accept_next_alert:
-                alert.accept()
-            else:
-                alert.dismiss()
-            return alert_text
-        finally: self.accept_next_alert = True
-    
-    def tearDown(self):
-        self.driver.quit()
-        self.assertEqual([], self.verificationErrors)
+    @classmethod
+    def tearDownClass(cls):
+        print_header("TEAR DOWN CLASS")
+        cls.driver.quit()
+        
+        if cls.verificationErrors:
+            print_fail(f"CÓ {len(cls.verificationErrors)} LỖI XẢY RA TRONG QUÁ TRÌNH CHẠY:")
+            for err in cls.verificationErrors:
+                print(f"  - {err}")
+            raise Exception("Test Suite Failed due to verification errors.")
+        else:
+            print_pass("Tất cả Test Case đã chạy thành công!")
 
 if __name__ == "__main__":
     unittest.main()
