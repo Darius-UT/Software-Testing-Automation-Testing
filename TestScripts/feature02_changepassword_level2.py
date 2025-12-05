@@ -2,6 +2,8 @@
 import unittest
 import time
 import csv
+import os
+import sys
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
@@ -9,6 +11,10 @@ from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
+
+# --- CẤU HÌNH ĐỂ IMPORT MODULE TỪ THƯ MỤC CHA ---
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from Utilities.console_utils import print_header, print_info, print_pass, print_fail
 
 
 # ---------------------------------------------------------
@@ -91,7 +97,6 @@ class ChangePasswordLevel2(unittest.TestCase):
     # OPEN CHANGE PASSWORD
     # -----------------------------------------------------
     def open_change_pw(self):
-        # Map locator type to Selenium By for explicit wait
         loc_type, loc_value = self.loc["change_password_link"]
         by_map = {
             "id": By.ID,
@@ -111,68 +116,95 @@ class ChangePasswordLevel2(unittest.TestCase):
     # -----------------------------------------------------
     def test_change_password(self):
         driver = self.driver
+        print_header("TEST SUITE: CHANGE PASSWORD")
 
-        # Load testcases from Data folder
         with open("./Data/change_password_data.csv", encoding="utf-8-sig") as f:
             reader = csv.DictReader(f)
 
             for row in reader:
+                test_case_id = row["TestcaseID"]
+                
+                print(f"\n--------------------------------------------------")
+                print_info("Running", test_case_id)
+                print_info("Email", row["email"])
+                print_info("Expected Type", row["ExpectedType"])
 
-                print("\n===== RUNNING:", row["TestcaseID"], "=====")
+                try:
+                    # Step 1: login
+                    self.login(row["email"], row["password"])
+                    time.sleep(1)
 
-                # Step 1: login
-                self.login(row["email"], row["password"])
-                time.sleep(1)
+                    # Step 2: open change password page
+                    self.open_change_pw()
 
-                # Step 2: open change password page
-                self.open_change_pw()
+                    # Step 3: enter new password
+                    self.find("new_password_input").clear()
+                    self.find("new_password_input").send_keys(row["changePassword"])
 
-                # Step 3: enter new password
-                self.find("new_password_input").clear()
-                self.find("new_password_input").send_keys(row["changePassword"])
+                    self.find("confirm_password_input").clear()
+                    self.find("confirm_password_input").send_keys(row["confirmPassword"])
 
-                self.find("confirm_password_input").clear()
-                self.find("confirm_password_input").send_keys(row["confirmPassword"])
+                    self.find("continue_button").click()
+                    time.sleep(1.2)
 
-                self.find("continue_button").click()
-                time.sleep(1.2)
+                    # Step 4: VALIDATION
+                    if row["ExpectedType"] == "success":
+                        try:
+                            msg = self.find("success_alert").text
+                            self.assertIn(row["ExpectedMessage"], msg)
+                            print_pass(f"SUCCESS: {row['ExpectedMessage']}")
+                        except AssertionError as e:
+                            error_msg = f"Assertion Error: {str(e)}"
+                            self.verificationErrors.append(f"[{test_case_id}] FAIL: {error_msg}")
+                            print_fail(error_msg)
+                        except Exception as e:
+                            error_msg = f"Runtime Error: {str(e)}"
+                            self.verificationErrors.append(f"[{test_case_id}] ERROR: {error_msg}")
+                            print_fail(error_msg)
 
-                # Step 4: VALIDATION
-                if row["ExpectedType"] == "success":
-                    try:
-                        msg = self.find("success_alert").text
-                        self.assertIn(row["ExpectedMessage"], msg)
-                        print("✓ SUCCESS:", row["ExpectedMessage"])
-                    except Exception as e:
-                        print("✗ FAIL:", e)
-                        self.verificationErrors.append(str(e))
+                    else:
+                        try:
+                            errors = ""
+                            elements = driver.find_elements(By.CSS_SELECTOR, ".text-danger")
+                            errors = " ".join([e.text for e in elements])
 
-                else:
-                    try:
-                        errors = ""
-                        elements = driver.find_elements(By.CSS_SELECTOR, ".text-danger")
-                        errors = " ".join([e.text for e in elements])
+                            print_info("Detected errors", errors if errors else "(none)")
 
-                        print("Detected errors:", errors)
+                            for msg in row["ExpectedMessage"].split(";"):
+                                self.assertIn(msg.strip(), errors)
 
-                        for msg in row["ExpectedMessage"].split(";"):
-                            self.assertIn(msg.strip(), errors)
+                            print_pass(f"ERROR matched: {row['ExpectedMessage']}")
 
-                        print("✓ ERROR:", row["ExpectedMessage"])
+                        except AssertionError as e:
+                            error_msg = f"Assertion Error: {str(e)}"
+                            self.verificationErrors.append(f"[{test_case_id}] FAIL: {error_msg}")
+                            print_fail(error_msg)
+                        except Exception as e:
+                            error_msg = f"Runtime Error: {str(e)}"
+                            self.verificationErrors.append(f"[{test_case_id}] ERROR: {error_msg}")
+                            print_fail(error_msg)
 
-                    except Exception as e:
-                        print("✗ FAIL:", e)
-                        self.verificationErrors.append(str(e))
+                    # Step 5: logout
+                    driver.get(self.loc["logout_url"][1])
+                    time.sleep(1)
 
-                # Step 5: logout
-                driver.get(self.loc["logout_url"][1])
-                time.sleep(1)
+                except Exception as e:
+                    error_msg = f"Unexpected Error: {str(e)}"
+                    self.verificationErrors.append(f"[{test_case_id}] ERROR: {error_msg}")
+                    print_fail(error_msg)
 
 
     def tearDown(self):
-        print("\n===== TEST FINISHED =====")
-        self.assertEqual([], self.verificationErrors)
+        print_header("TEAR DOWN")
         self.driver.quit()
+        
+        if self.verificationErrors:
+            print_fail(f"CÓ {len(self.verificationErrors)} LỖI XẢY RA TRONG QUÁ TRÌNH CHẠY:")
+            for err in self.verificationErrors:
+                print(f"  - {err}")
+            raise Exception("Test Suite Failed due to verification errors.")
+        else:
+            print_pass("Tất cả Test Case đã chạy thành công!")
 
 
 if __name__ == "__main__":
