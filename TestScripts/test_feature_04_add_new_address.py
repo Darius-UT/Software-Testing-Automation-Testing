@@ -30,12 +30,13 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from Utilities.console_utils import print_header, print_info, print_pass, print_fail
 
 class TestFeature04AddNewAddress(unittest.TestCase):
-    def setUp(self):
-        self.driver = webdriver.Chrome()
-        self.driver.implicitly_wait(30)
-        self.base_url = "https://www.google.com/"
-        self.verificationErrors = []
-        self.accept_next_alert = True
+    @classmethod
+    def setUpClass(cls):
+        cls.driver = webdriver.Chrome()
+        cls.driver.implicitly_wait(30)
+        cls.base_url = "https://www.google.com/"
+        cls.verificationErrors = []
+        cls.accept_next_alert = True
     
     def test_feature03_edit_account(self):
         print_header("TEST SUITE: ADD NEW ADDRESS")
